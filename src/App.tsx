@@ -10,6 +10,8 @@ import {Price} from "./features/Price/Price";
 import {Teachers} from "./features/Teachers/Teachers";
 import {Testing} from "./features/Testing/Testing";
 import {Blog} from "./features/Blog/Blog";
+import {Admin} from "./features/Admin/Admin";
+import { Login } from './features/Login/Login';
 
 function App() {
     return (
@@ -22,6 +24,8 @@ function App() {
                 <Route path={'/teachers'} element={<Teachers/>}/>
                 <Route path={'/testing'} element={<Testing/>}/>
                 <Route path={'/blog'} element={<Blog/>}/>
+                <Route path={'/admin'} element={<Admin/>}/>
+                <Route path={'/login'} element={<Login/>}/>
             </Routes>
             <Footer/>
         </div>

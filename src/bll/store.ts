@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit"
 import {TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
+import {schoolReducer} from "./schoolReducer";
 
 export const store=configureStore({
     reducer:{
-        //school:
+        school:schoolReducer
     }
 })
 

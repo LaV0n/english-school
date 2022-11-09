@@ -3,8 +3,12 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import {NavLink} from "react-router-dom";
+import {useAppSelector} from "../../bll/store";
 
 export const Header = () => {
+
+    const isAdmin=useAppSelector(state => state.school.isAdmin)
+
     return (
         <div className={styles.container}>
             <div className={styles.infoBlock}>
@@ -36,7 +40,8 @@ export const Header = () => {
                 <NavLink to={'/price'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Price</NavLink>
                 <NavLink to={'/teachers'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Teachers</NavLink>
                 <NavLink to={'/testing'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Testing</NavLink>
-                <NavLink to={'/blog'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Blog</NavLink>
+                 <NavLink to={'/blog'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Blog</NavLink>
+                {isAdmin && <NavLink to={'/admin'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Admin</NavLink>}
             </div>
         </div>
     )
