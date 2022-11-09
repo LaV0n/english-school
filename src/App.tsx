@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.scss'
+import './App.module.scss';
+import {Header} from "./features/Header/Header";
+import {Footer} from "./features/Footer/Footer";
+import {Route, Routes} from "react-router-dom";
+import {Main} from "./features/Main/Main";
+import { Courses } from './features/Courses/Courses';
+import {Price} from "./features/Price/Price";
+import {Teachers} from "./features/Teachers/Teachers";
+import {Testing} from "./features/Testing/Testing";
+import {Blog} from "./features/Blog/Blog";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className={styles.App}>
+            <Header/>
+            <Routes>
+                <Route path={'/'} element={<Main/>}/>
+                <Route path={'/courses'} element={<Courses/>}/>
+                <Route path={'/price'} element={<Price/>}/>
+                <Route path={'/teachers'} element={<Teachers/>}/>
+                <Route path={'/testing'} element={<Testing/>}/>
+                <Route path={'/blog'} element={<Blog/>}/>
+            </Routes>
+            <Footer/>
+        </div>
+    );
 }
 
 export default App;
