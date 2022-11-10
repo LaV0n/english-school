@@ -11,6 +11,16 @@
     padding: 20px 70px;
     color: var(--textMainColor);
     background-color: var(--mainColor);
+    .logo{
+      display: flex;
+      flex-direction: row;
+      font-size: 24px;
+      gap: 20px;
+      align-items: center;
+      .logoText{
+        width: 100px;
+      }
+    }
 
     .contact {
       display: flex;
