@@ -3,4 +3,37 @@
     width: 100%;
     min-height: calc(100vh - 450px);
     background-color: var(--textMainColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2,h4{
+        color: #333232;
+    }
+    .block{
+        display: flex;
+        margin: 40px 0;
+        flex-direction: row;
+        gap:20px;
+        justify-content: center;
+        align-items: center;
+        .course{
+            width: 250px;
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow:2px 2px 2px 2px #333232;
+            p{
+                padding: 0 10px;
+                span{
+                    font-size: 20px;
+                    margin: 0 5px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
 }
