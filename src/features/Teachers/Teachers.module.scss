@@ -3,4 +3,34 @@
     width: 100%;
     min-height: calc(100vh - 450px);
     background-color: var(--textMainColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .block{
+        width: 80%;
+        margin-bottom: 50px;
+        border-radius: 10px;
+        .carousel{
+            width: 100%;
+            align-items: center;
+        }
+        .teacher{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 200px;
+            height: 400px;
+            img{
+                width: 100%;
+                max-height: 250px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+            .box{
+                position: absolute;
+            }
+        }
+    }
 }

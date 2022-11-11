@@ -1,9 +1,60 @@
 import styles from './Teachers.module.scss'
+import {useAppSelector} from "../../bll/store";
+import {Carousel} from '@trendyol-js/react-carousel';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { useState } from 'react';
+import {Box, Button, Modal } from '@mui/material';
+import {TeacherModal} from "../../common/modal/TeacherModal";
 
-export const Teachers = ()=>{
+export const Teachers = () => {
+
+    const teachers = useAppSelector(state => state.school.teachers)
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     return (
         <div className={styles.container}>
-            Teachers
+            <h2>
+                Our teachers
+            </h2>
+            <div className={styles.block}>
+                <Carousel show={2.5}
+                          slide={1}
+                          transition={0.5}
+                          useArrowKeys={true}
+                          rightArrow={<NavigateNextIcon/>}
+                              leftArrow={<ArrowBackIosNewIcon/>}
+                          className={styles.carousel}
+             >
+                    {teachers.map((t, index) =>
+                            <div className={styles.teacher} key={index}>
+                                <img src={t.avatar} alt={'0'}/>
+                                <h3>
+                                    {t.name}
+                                </h3>
+                                <div>
+                                    "{t.slogan}"
+                                </div>
+                                <Button onClick={handleOpen}>Read more</Button>
+                                <Modal
+                                    open={open}
+                                    onClose={handleClose}
+
+                                ><Box className={styles.box}>
+                                    <TeacherModal/>
+                                </Box>
+                                </Modal>
+                            </div>
+                    )}
+                </Carousel>
+
+            </div>
         </div>
     )
 }
