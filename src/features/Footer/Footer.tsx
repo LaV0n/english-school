@@ -5,12 +5,19 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import {Link} from "@mui/material";
+import { useNavigate} from "react-router-dom";
 
 export const Footer = () => {
+
+    let navigate = useNavigate();
+    const onDoubleClickHandler=()=>{
+       navigate('/login')
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.iconPanel}>
-                <SchoolIcon fontSize={'large'}/>
+                <SchoolIcon fontSize={'large'} onDoubleClick={onDoubleClickHandler}/>
                 <div>
                     <Link href={'#'} color={'inherit'}>
                         <FacebookIcon/>

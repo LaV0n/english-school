@@ -5,7 +5,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useState } from 'react';
 import {Box, Button, Modal } from '@mui/material';
-import {TeacherModal} from "../../common/modal/TeacherModal";
+import {TeacherModal} from "../../common/modal/TeacherModal/TeacherModal";
 import {TeacherType} from "../../bll/schoolReducer";
 
 export const Teachers = () => {

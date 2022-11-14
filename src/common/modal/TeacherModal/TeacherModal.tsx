@@ -1,5 +1,5 @@
 import styles from './TeacherModal.module.scss'
-import {TeacherType} from "../../bll/schoolReducer";
+import {TeacherType} from "../../../bll/schoolReducer";
 
 type TeacherModalType = {
     teacher: TeacherType

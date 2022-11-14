@@ -18,7 +18,7 @@ export const Login = ()=>{
     }
     useEffect(()=>{
         if(isAdmin){
-            return  navigate("/admin")
+            return  navigate("/")
         }
     },[isAdmin])
 

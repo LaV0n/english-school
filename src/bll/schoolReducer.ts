@@ -120,11 +120,20 @@ const slice=createSlice({
                 state.errorMessage='incorrect password'
             }
         },
+        logout(state){
+          state.isAdmin=false
+        },
         setUserData(state,action:PayloadAction<{user:UserType}>){
             state.user=action.payload.user
+        },
+        createNewPost(state,action:PayloadAction<{post:BlogType}>){
+            state.blogs.unshift(action.payload.post)
+        },
+        deletePost(state,action:PayloadAction<{id:number}>){
+            state.blogs=state.blogs.filter(p=>p.id!==action.payload.id)
         }
     }
 })
 
 export const schoolReducer=slice.reducer
-export const {login,setUserData}=slice.actions
+export const {login,setUserData,logout,createNewPost,deletePost}=slice.actions
