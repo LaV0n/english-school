@@ -6,14 +6,14 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useState } from 'react';
 import {Box, Button, Modal } from '@mui/material';
 import {TeacherModal} from "../../common/modal/TeacherModal";
+import {TeacherType} from "../../bll/schoolReducer";
 
 export const Teachers = () => {
 
     const teachers = useAppSelector(state => state.school.teachers)
     const [open, setOpen] = useState(false);
-    const handleOpen = () => {
-        setOpen(true);
-    };
+    const [selectedTeacher,setSelectedTeacher]=useState<TeacherType>(teachers[0])
+
     const handleClose = () => {
         setOpen(false);
     };
@@ -33,27 +33,30 @@ export const Teachers = () => {
                           className={styles.carousel}
              >
                     {teachers.map((t, index) =>
-                            <div className={styles.teacher} key={index}>
-                                <img src={t.avatar} alt={'0'}/>
-                                <h3>
-                                    {t.name}
-                                </h3>
-                                <div>
-                                    "{t.slogan}"
+                                <div className={styles.teacher} key={index}>
+                                    <img src={t.avatar} alt={'0'}/>
+                                    <h3>
+                                        {t.name}
+                                    </h3>
+                                    <div>
+                                        "{t.slogan}"
+                                    </div>
+                                    <Button onClick={() => {
+                                        setOpen(true);
+                                        setSelectedTeacher(t)
+                                    }
+                                    }>Read more</Button>
                                 </div>
-                                <Button onClick={handleOpen}>Read more</Button>
-                                <Modal
-                                    open={open}
-                                    onClose={handleClose}
-
-                                ><Box className={styles.box}>
-                                    <TeacherModal/>
-                                </Box>
-                                </Modal>
-                            </div>
                     )}
                 </Carousel>
+                <Modal
+                    open={open}
+                    onClose={handleClose}
 
+                ><Box className={styles.box}>
+                    <TeacherModal teacher={selectedTeacher}/>
+                </Box>
+                </Modal>
             </div>
         </div>
     )
