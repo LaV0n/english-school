@@ -33,7 +33,10 @@ export const Teachers = () => {
                           className={styles.carousel}
              >
                     {teachers.map((t, index) =>
-                                <div className={styles.teacher} key={index}>
+                                <div className={styles.teacher} key={index}
+                                     onClick={() => {
+                                    setOpen(true);
+                                    setSelectedTeacher(t)}}>
                                     <img src={t.avatar} alt={'0'}/>
                                     <h3>
                                         {t.name}
@@ -41,11 +44,7 @@ export const Teachers = () => {
                                     <div>
                                         "{t.slogan}"
                                     </div>
-                                    <Button onClick={() => {
-                                        setOpen(true);
-                                        setSelectedTeacher(t)
-                                    }
-                                    }>Read more</Button>
+                                    <Button >Read more</Button>
                                 </div>
                     )}
                 </Carousel>
