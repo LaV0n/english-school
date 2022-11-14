@@ -12,6 +12,13 @@ export type TeacherType={
     age:number
     experience:number
 }
+export type BlogType={
+    id:number
+    header:string
+    img:string
+    date:Date
+    description:string
+}
 export type CoursesType={
     name:string
     description:string
@@ -26,6 +33,7 @@ type InitialStateType={
     user:UserType
     courses:CoursesType[]
     teachers:TeacherType[]
+    blogs:BlogType[]
 }
 
 const initialState:InitialStateType={
@@ -89,6 +97,14 @@ const initialState:InitialStateType={
             avatar:'https://static.jobscan.co/blog/uploads/linkedin-profile-picture.jpg',
             age:28,
             experience:6},
+    ],
+    blogs:[
+        {id:1, date:new Date('2022-03-25T12:00:00Z'), img:'https://images.pexels.com/photos/949592/pexels-photo-949592.jpeg?cs=srgb&dl=pexels-rovenimagescom-949592.jpg&fm=jpg', header:'WE start',description:'WE open our courses'},
+        {id:2, date:new Date('2022-03-26T12:00:00Z'), img:'https://www.nea.org/sites/default/files/legacy/2020/04/new_teacher.jpeg', header:'New Teacher',description:'WE are growing'},
+        {id:3, date:new Date('2022-03-27T12:00:00Z'), img:'https://resources.reed.co.uk/courses/coursemedia/343869/88a3ce6c-fc25-4a00-ab49-ba4742f2f02f_cover.jpg', header:'New course',description:'New course for advance knowledge'},
+        {id:4, date:new Date('2022-07-28T12:00:00Z'), img:'https://www.stonegroup.co.uk/media/blog/Teacher_.jpg', header:'New teacher',description:'WE are growing'},
+        {id:5, date:new Date('2022-10-30T12:00:00Z'), img:'https://financesonline.com/uploads/2015/02/Sales.jpg', header:'Sales',description:'Get more knowledge fol lower price'},
+
     ]
 }
 
