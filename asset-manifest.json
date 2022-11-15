@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/english-school/static/css/main.a817b7fa.css",
+    "main.js": "/english-school/static/js/main.77152e90.js",
+    "static/js/787.16090226.chunk.js": "/english-school/static/js/787.16090226.chunk.js",
+    "static/media/16_jul_-_learn_new_language.jpg": "/english-school/static/media/16_jul_-_learn_new_language.af6b0e9c6365b31b7209.jpg",
+    "index.html": "/english-school/index.html",
+    "main.a817b7fa.css.map": "/english-school/static/css/main.a817b7fa.css.map",
+    "main.77152e90.js.map": "/english-school/static/js/main.77152e90.js.map",
+    "787.16090226.chunk.js.map": "/english-school/static/js/787.16090226.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a817b7fa.css",
+    "static/js/main.77152e90.js"
+  ]
+}
