@@ -39,19 +39,20 @@
   .navBar {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 20px 120px;
     background-color: var(--secondColor);
     .navLink{
       text-decoration: none;
       color: black;
+      padding: 0 50px;
 
     }
     .navLinkActive{
-      background-color: #545157;
-      padding: 5px;
-      border-radius: 10px;
+      background-color: rgba(84, 81, 87, 0.58);
+      padding: 5px 10px;
+      border-radius: 20px;
       text-decoration: none;
       color: white;
     }

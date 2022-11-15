@@ -21,6 +21,11 @@
             height: 300px;
             border-radius: 20px;
             background-size: cover;
+            transition: transform .2s;
+            &:hover{
+                transform: scale(1.5);
+                z-index: 3;
+            }
             .cover{
                 display: flex;
                 border-radius: 20px;
@@ -31,6 +36,14 @@
                 height: 100%;
                 background-color: rgba(0, 0, 0, 0.6);
                 color: var(--textMainColor);
+                span{
+                    margin: 0 5px;
+                    font-size: 20px;
+                    background-color: rgba(255, 255, 255, 0.76);
+                    border-radius: 15px;
+                    padding:0 5px;
+                    color: black;
+                }
             }
             img{
                 width: 100%;

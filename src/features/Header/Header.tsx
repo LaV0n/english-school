@@ -57,10 +57,9 @@ export const Header = () => {
             <div className={styles.navBar}>
                 <NavLink to={'/'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink} >About Us</NavLink>
                 <NavLink to={'/courses'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Courses</NavLink>
-                <NavLink to={'/price'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Price</NavLink>
                 <NavLink to={'/teachers'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Teachers</NavLink>
-                <NavLink to={'/testing'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Testing</NavLink>
-                 <NavLink to={'/blog'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Blog</NavLink>
+                <NavLink to={'/consultation'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Consultation</NavLink>
+                <NavLink to={'/blog'} className={({isActive})=> isActive?styles.navLinkActive:styles.navLink}>Blog</NavLink>
             </div>
         </div>
     )
