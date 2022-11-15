@@ -1,11 +1,36 @@
 .container{
     padding-top: 200px;
-    width: 100%;
-    min-height: calc(100vh - 450px);
-    background-color: var(--textMainColor);
-    display: flex;
+    min-height: calc(100vh - 470px);
+    background-color: var(--textMainColor);display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+
+    .block{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px;
+        gap: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.22);
+        border-radius: 30px;
+        width: 250px;
+        div{
+            font-size: 24px;
+            font-weight: bold;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            input{
+                height: 30px;
+                font-size: 20px;
+            }
+        }
+    }
+
 }

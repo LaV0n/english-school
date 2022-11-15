@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {useAppDispatch, useAppSelector} from "../../bll/store";
 import {login} from "../../bll/schoolReducer";
 import {  useNavigate } from 'react-router-dom';
+import { Alert, Button } from '@mui/material';
 
 export const Login = ()=>{
 
@@ -24,12 +25,18 @@ export const Login = ()=>{
 
     return (
         <div className={styles.container}>
-            <div>Login</div>
-            <form onSubmit={onSubmitHandler}>
-                <input type={'password'} onChange={(e)=>setValue(e.currentTarget.value)} value={value}/>
-                <button> login</button>
-                {errorMessage && <div>{errorMessage}</div>}
-            </form>
+            <div className={styles.block}>
+                <div>Login</div>
+                <form onSubmit={onSubmitHandler}>
+                    <input type={'password'} onChange={(e)=>setValue(e.currentTarget.value)} value={value}/>
+                    <Button variant={'outlined'} color={'inherit'} onClick={onSubmitHandler}> login</Button>
+                    {errorMessage &&
+                        <Alert variant="filled" severity="error">
+                            {errorMessage}
+                        </Alert>
+                    }
+                </form>
+            </div>
         </div>
     )
 }
