@@ -1,7 +1,7 @@
 import styles from './Blog.module.scss'
 import {useAppDispatch, useAppSelector} from "../../bll/store";
 import CloseIcon from "@mui/icons-material/Close";
-import {Box, Button, Modal} from "@mui/material";
+import {Alert, Box, Button, Modal, Snackbar} from "@mui/material";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import {useState} from "react";
 import {PostModal} from "../../common/modal/PostModal/PostModal";
@@ -13,6 +13,12 @@ export const Blog = ()=>{
     const isAdmin=useAppSelector(state => state.school.isAdmin)
     const [open, setOpen] = useState(false);
     const dispatch=useAppDispatch()
+
+    const [openSnackbar,setOpenSnackbar]=useState(false)
+
+    const handleCloseSnackbar=()=>{
+        setOpenSnackbar(false)
+    }
 
     const handleClose = () => {
         setOpen(false);
@@ -53,9 +59,14 @@ export const Blog = ()=>{
                 open={open}
                 onClose={handleClose}
             ><Box className={styles.box}>
-                <PostModal  onClose={handleClose}/>
+                <PostModal  onClose={handleClose} setOpenSnackbar={setOpenSnackbar}/>
             </Box>
             </Modal>
+            <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={handleCloseSnackbar}>
+                <Alert onClose={handleCloseSnackbar} severity="success" variant="filled">
+                    New post has been created!
+                </Alert>
+            </Snackbar>
         </div>
     )
 }
