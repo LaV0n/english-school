@@ -18,7 +18,9 @@ Stack: *React/Redux-Toolkit/MUI/Formik/Sass*
 ## Blog page for news
 
 ![](https://github.com/LaV0n/english-school/blob/master/src/assets/image/Screenshot_4.png)
-## For admin mode you must double-click this icon in the footer and enter the password : "123456" 
+## Admin mode
+
+For admin mode you must double-click this icon in the footer and enter the password : "123456" 
 
 ![](https://github.com/LaV0n/english-school/blob/master/src/assets/image/Screenshot_5.png)
 ## You can add and delete posts
